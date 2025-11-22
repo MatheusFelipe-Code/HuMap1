@@ -1,0 +1,160 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* NAVBAR */
+.navbar {
+    width: 100%;
+    height: 60px;
+    background: #005eff;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    gap: 12px;
+}
+
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 18px;
+    height: 2.5px;
+    background: #fff;
+}
+
+.perfil-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.perfil-btn img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+/* PESQUISA */
+.search-area {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-area input {
+    width: 100%;
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+}
+
+.search-btn {
+    position: absolute;
+    right: 8px;
+    border: none;
+    background: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* SUGESTÕES */
+.suggestions {
+    position: absolute;
+    top: 40px;
+    background: white;
+    width: 100%;
+    border-radius: 10px;
+    padding: 5px 0;
+    display: none;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.suggestions p {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.suggestions p:hover {
+    background: #f0f0f0;
+}
+
+/* NOTIFICAÇÕES */
+.notify-btn {
+    font-size: 22px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+.notif-box {
+    position: absolute;
+    top: 65px;
+    right: 15px;
+    width: 260px;
+    background: white;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    display: none;
+}
+
+.notif-box.open {
+    display: block;
+}
+
+.notif-box p {
+    margin-bottom: 8px;
+}
+
+/* MENU LATERAL */
+.menu {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    width: 260px;
+    height: 100%;
+    background: white;
+    transition: .3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 3px 0 10px rgba(0,0,0,0.2);
+}
+
+.menu.open {
+    left: 0;
+}
+
+.menu-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.menu-content a {
+    font-size: 18px;
+    text-decoration: none;
+    color: #005eff;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.btn-close {
+    padding: 15px;
+    background: #005eff;
+    color: white;
+    border: none;
+    font-size: 18px;
+}
