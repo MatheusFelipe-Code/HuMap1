@@ -1,0 +1,726 @@
+/* Fonte padrão dos textos */
+body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  background-color: #f6f2f2;
+}
+
+/* Fonte específica dos botões */
+button,
+.btn,
+.btn-primary,
+.btn-outline-secondary {
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+/* NAVBAR - AJUSTADO PARA O NOVO LAYOUT */
+.barra-navegacao-home {
+  width: 100%;
+  height: 5rem;
+  background: #005bb5;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  position: relative;
+  /* Garante que o mapa comece abaixo da navbar */
+  z-index: 1040;
+}
+
+/* Esconde os elementos do navbar-brand e nav-link (Bootstrap antigo) */
+.navbar-brand,
+.nav-link,
+.form-control {
+  color: white !important;
+  /* Cor da fonte alterada para branco na navbar azul */
+}
+
+/* Botão Hambúrguer */
+#menuToggleBtn {
+  background-color: transparent;
+  border: none;
+  color: white;
+  padding: 0.5rem;
+  margin-right: 1rem;
+  font-size: 1.5rem;
+  /* Aumenta um pouco o ícone */
+  border-radius: 5px;
+  /* Mantém um pequeno arredondamento */
+}
+
+#menuToggleBtn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Botão de perfil */
+.botao-perfil-home {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: white;
+  /* Cor do texto no botão */
+  margin-right: 2rem;
+}
+
+.botao-perfil-home .imagem-perfil-home {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  /* Faz a imagem do perfil ser redonda */
+  object-fit: cover;
+}
+
+.botao-perfil-home p {
+  margin-bottom: 0;
+  font-weight: 500;
+}
+
+/* Área de pesquisa */
+.area-pesquisa-home {
+  flex-grow: 1;
+  /* Permite que ocupe o espaço disponível */
+  max-width: 500px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  /* Centraliza a área de pesquisa */
+}
+
+.area-pesquisa-home input {
+  padding: 0.5rem 3rem 0.5rem 1rem;
+  /* Ajustado para ter espaço para a lupa */
+  width: 100%;
+  height: 2.5rem;
+  border-radius: 2rem;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Botão da lupa */
+.botao-pesquisa-home {
+  position: absolute;
+  right: 15px;
+  /* Distância da borda direita do input */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.botao-pesquisa-home img {
+  width: 20px;
+  height: 20px;
+}
+
+/* Sugestões */
+.sugestoes-pesquisa-home {
+  position: absolute;
+  top: 48px;
+  left: 0;
+  background: #fff;
+  width: 100%;
+  border-radius: 12px;
+  padding: 8px 0;
+  display: none;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+  z-index: 20;
+}
+
+.sugestoes-pesquisa-home p {
+  padding: 10px 16px;
+  cursor: pointer;
+  font-size: 15px;
+  color: #333;
+  /* CORREÇÃO: Cor do texto das sugestões alterada para preto */
+}
+
+.sugestoes-pesquisa-home p:hover {
+  background: #f0f0f0;
+}
+
+/* Botão de notificações */
+.botao-notificacao-home {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  margin-left: 2rem;
+  line-height: 0;
+  /* Corrige o alinhamento do ícone */
+}
+
+.botao-notificacao-home img {
+  width: 27px;
+  height: 27px;
+  filter: brightness(100);
+}
+
+/* Caixa de notificações */
+.caixa-notificacao-home {
+  position: fixed;
+  /* Mudar para fixed para funcionar corretamente */
+  top: 70px;
+  right: 15px;
+  /* Perto do sininho */
+  width: 300px;
+  /* Largura ajustada para ser mais responsiva */
+  background: #fff;
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+  display: none;
+  z-index: 1060;
+  /* Acima do overlay do sidebar */
+}
+
+.caixa-notificacao-home.open {
+  display: block;
+}
+
+.caixa-notificacao-home p {
+  font-size: 14px;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #eee;
+}
+
+.caixa-notificacao-home p:last-child {
+  border-bottom: none;
+}
+
+/* ESTILOS DO FILTRO FLUTUANTE */
+.container-filtro-home {
+  padding: 0 !important;
+  /* Remove padding desnecessário */
+  z-index: 10;
+}
+
+.filtro-flutuante-home {
+  position: absolute;
+  /* Posiciona o filtro dentro do container-mapa-home */
+  top: 15px;
+  right: 15px;
+  z-index: 500;
+  /* Garante que fique acima do mapa, mas abaixo dos controles Leaflet */
+}
+
+.botao-filtro-home {
+  background-color: #e9e9e9;
+  /* Fundo cinza claro da imagem */
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  /* Bordas arredondadas */
+  padding: 8px 15px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.botao-filtro-home:hover {
+  background-color: #dedede;
+  color: #333;
+}
+
+.botao-filtro-home i {
+  font-size: 1.2rem;
+  margin-right: 5px;
+}
+
+#filterDropdownMenu {
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.opcao-filtro-home.active {
+    /* Mantém o estilo ativo do Bootstrap para o item de filtro */
+    background-color: var(--bs-dropdown-link-active-bg);
+    color: var(--bs-dropdown-link-active-color);
+}
+
+/* Layout base */
+.conteudo-flex-home {
+  display: flex;
+  flex-wrap: wrap;
+  /* Altura automática para permitir que o rodapé apareça */
+  height: auto;
+  min-height: calc(100vh - 5rem);
+  /* Garante que o mapa preencha a tela se não houver rolagem */
+}
+
+.container-mapa-home {
+  flex: 1 1 100%;
+  min-height: 300px;
+  height: calc(100vh - 5rem);
+  position: relative;
+}
+
+#map {
+  height: 100%;
+  width: 100%;
+}
+
+.container-formulario-home {
+  flex: 1 1 auto;
+  background-color: white !important;
+  padding: 1.5rem;
+  overflow-y: auto;
+}
+
+/* Botões e inputs */
+.btn-primary {
+  background-color: #005bb5;
+  border: none;
+  border-radius: 20px;
+}
+
+/* Adicionando para garantir que o texto de todos os inputs (select, textarea) seja preto */
+.form-control {
+  color: #333 !important;
+}
+
+.btn-outline-secondary {
+  border-radius: 20px;
+}
+
+.botao-localizacao-home {
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+
+.coordenadas-texto-home {
+  /* Cor ajustada para ser visível em fundo branco (no modal) */
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+/* Lista de anexos */
+.lista-anexos-home span {
+  background-color: #f3f4f6;
+  border-radius: 20px;
+  padding: 6px 12px;
+  margin: 5px;
+  display: inline-block;
+}
+
+.lista-anexos-home span i {
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+
+/* ----------------------- BOTÃO FLUTUANTE NOVA DENÚNCIA ----------------------- */
+.botao-nova-denuncia-home {
+  position: absolute; /* agora preso ao mapa */
+  bottom: 30px;       /* distância do fundo do mapa */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 600;
+  padding: 10px 20px; /* <--- AJUSTADO: De 12px 25px para 10px 20px */
+  font-size: 0.95rem; /* <--- AJUSTADO: De 1rem para 0.95rem */
+  max-width: 250px;   /* <--- NOVO: Limita a largura do botão em telas maiores */
+  width: auto;        /* Garante que a largura se ajuste ao conteúdo + padding */
+  border-radius: 50px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  background-color: #005bb5;
+  color: white;
+  border: 5px solid white;
+}
+
+/* ----------------------- VARIÁVEIS E ESTILOS DO SIDEBAR (MENU LATERAL) ----------------------- */
+:root {
+  --sidebar-width: 280px;
+  /* Aumentado para corresponder ao novo CSS */
+  --sidebar-bg: #005bb5;
+}
+
+/* Overlay Escuro */
+.overlay-menu-home {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1050;
+  display: none;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+/* Menu Lateral */
+.menu-lateral-home {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--sidebar-width);
+  height: 100%;
+  background-color: var(--sidebar-bg);
+  color: white;
+  z-index: 1060;
+  padding-top: 20px;
+  transition: transform 0.3s ease;
+  transform: translateX(calc(-1 * var(--sidebar-width)));
+  box-shadow: 3px 0 10px rgba(0, 0, 0, 0.2);
+  /* Estilo adicionado para o botão de sair */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Botão "Sair" do menu lateral (btn-close) */
+.botao-fechar-menu-home {
+  padding: 1rem;
+  width: 100%;
+  background: #005bb5;
+  color: #fff;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.botao-fechar-menu-home:hover {
+  background: #004a99;
+}
+
+
+/* Estado ATIVO (aparecendo) */
+.menu-lateral-home.active {
+  transform: translateX(0);
+}
+
+.overlay-menu-home.active {
+  opacity: 1;
+}
+
+/* Estilos dos links/itens do menu */
+.menu-lateral-home .list-group {
+  /* Garante que o menu-content ocupe a maior parte, empurrando o botão de sair para baixo */
+  flex-grow: 1;
+  padding: 30px 0px;
+}
+
+.menu-lateral-home .list-group-item {
+  background-color: transparent;
+  color: white;
+  border: none;
+  padding: 15px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  /* Separador */
+}
+
+.menu-lateral-home .list-group-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Estilos para os ícones */
+.menu-lateral-home .material-icons-outlined,
+.menu-lateral-home .bi {
+  margin-right: 15px;
+  font-size: 24px;
+}
+
+/* ----------------------- RESPONSIVIDADE ----------------------- */
+@media (max-width: 992px) {
+
+  /* Desktop -> Tablet/Mobile */
+  .conteudo-flex-home {
+    flex-direction: column;
+    height: auto;
+    min-height: auto;
+    /* Permite que o conteúdo se ajuste livremente */
+  }
+
+  .container-mapa-home,
+  .container-formulario-home {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  .container-formulario-home {
+    padding: 1rem;
+  }
+
+  /* Permite que o mapa tenha uma altura fixa no mobile para não esmagar o rodapé */
+  #map {
+    height: 60vh;
+    min-height: 300px;
+  }
+
+  /* Esconde a barra de pesquisa no mobile */
+  .area-pesquisa-home {
+    display: none;
+  }
+}
+
+/* Estilos específicos para telas pequenas (ex: Mobile) */
+@media (max-width: 480px) {
+  .barra-navegacao-home {
+    height: 60px;
+    /* Navbar um pouco menor */
+    padding: 0 10px;
+    gap: 5px;
+    /* Menor espaço entre os elementos */
+  }
+
+  /* Ajuste no perfil */
+  .botao-perfil-home {
+    margin-right: 0.5rem;
+    gap: 5px;
+  }
+
+  .botao-perfil-home .imagem-perfil-home {
+    width: 34px;
+    height: 34px;
+  }
+
+  .botao-perfil-home p {
+    font-size: 0.875rem;
+    /* Fonte menor */
+  }
+
+  /* Ajuste nas notificações */
+  .botao-notificacao-home {
+    margin-left: auto;
+    /* Empurra para a direita */
+    padding: 0;
+  }
+
+  .botao-notificacao-home img {
+    width: 23px;
+    height: 23px;
+  }
+
+  /* Ajuste no menu hambúrguer */
+  #menuToggleBtn {
+    font-size: 1.3rem;
+  }
+
+  /* Ajuste na caixa de notificações */
+  .caixa-notificacao-home {
+    top: 65px;
+    right: 10px;
+    width: 95%;
+    /* Ocupa quase a largura toda */
+  }
+
+  .container-mapa-home,
+  .conteudo-flex-home {
+    /* Altura do mapa no mobile: agora definida por #map (60vh) */
+    height: auto;
+  }
+
+  /* Torna o modal de sucesso bem pequeno em telas mobile */
+  #successModal .modal-dialog {
+    max-width: 90%;
+    /* Usa 90% da tela */
+  }
+}
+
+/* NOVO ESTILO ADICIONADO AQUI */
+@media (max-width: 768px) {
+  .botao-nova-denuncia-home {
+    bottom: 15px;
+    padding: 12px 20px;
+    font-size: 0.95rem;
+    border-radius: 30px;
+    width: 85%;
+    text-align: center;
+  }
+}
+/* FIM DO NOVO ESTILO */
+
+#toggleViewBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  border-radius: 50px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* ----------------------- ESTILOS ADICIONAIS PARA MODAIS ----------------------- */
+
+/* 1. Garante que o conteúdo do modal tenha bordas arredondadas e esconda o excesso */
+.modal-content {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* 2. Caixa azul para o título/confirmação (se usada em outro modal) */
+.caixa-azul-padrao-home {
+  background-color: #005BB5;
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  margin: -1px;
+  margin-bottom: 0;
+}
+
+.caixa-azul-padrao-home .modal-title {
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+/* Estilo específico para o botão "Volta à tela de mapa" (sobrescreve o estilo anterior) */
+#successModal .modal-footer .btn-primary {
+  border-radius: 50px;
+  padding: 10px 40px;
+  width: auto;
+  background-color: white !important;
+  border: none;
+  color: #005BB5 !important;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+/* ----------------------- NOVOS ESTILOS PARA O MODAL DE SUCESSO ----------------------- */
+
+/* 1. Define a largura máxima do dialog (o contêiner do modal) para um tamanho menor */
+#successModal .modal-dialog {
+  max-width: 320px;
+  /* Reduzido de 350px para 320px */
+}
+
+/* 2. Estilos para o CONTEÚDO do modal de sucesso (cor de fundo e borda) */
+#successModal .modal-content {
+  background-color: #005BB5;
+  border: none;
+  box-shadow: none;
+  border-radius: 12px;
+  width: 100%;
+  /* Usa 100% do max-width definido acima */
+  margin: 0 auto;
+}
+
+/* 3. Estilo para o box azul escuro (o Denúncia enviada com sucesso) */
+.caixa-azul-confirmacao-home {
+  background-color: transparent;
+  color: white;
+  padding: 20px 10px;
+  /* Reduz o padding para diminuir a altura */
+  border-radius: 0;
+  margin: 0;
+  box-shadow: none;
+}
+
+.caixa-azul-confirmacao-home .texto-titulo-modal-home {
+  color: white;
+  font-size: 1.3rem;
+  /* Reduz o tamanho da fonte */
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+/* 4. Remove o padding do modal-body */
+#successModal .modal-body {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 5. Ajusta o rodapé para ter o mesmo fundo azul e padding reduzido */
+#successModal .modal-footer {
+  background-color: #005BB5;
+  border-top: none;
+  padding-bottom: 20px;
+  /* Reduz o padding inferior */
+  padding-top: 0;
+}
+
+/* ----------------------- ESTILOS DO NOVO FOOTER ----------------------- */
+.rodape-home {
+  width: 100%;
+  background-color: #fcfcfc;
+  /* Cinza escuro estilo HuMap */
+  color: #4928df;
+  padding: 40px 20px 20px 20px;
+  margin-top: 0;
+  /* Rodapé segue imediatamente o conteúdo (mapa) */
+  font-family: Arial, sans-serif;
+}
+
+.container-rodape-home {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.coluna-rodape-home .logo-rodape-home {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.coluna-rodape-home h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.coluna-rodape-home p {
+  opacity: 0.8;
+  font-size: 14px;
+}
+
+.coluna-rodape-home ul {
+  list-style: none;
+  padding: 0;
+}
+
+.coluna-rodape-home ul li {
+  margin-bottom: 6px;
+}
+
+.coluna-rodape-home ul li a {
+  text-decoration: none;
+  color: #4928df;
+  /* MANTENDO A COR DO TEXTO DA COR DA EMPRESA */
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+.coluna-rodape-home ul li a:hover {
+  text-decoration: underline;
+}
+
+.texto-direitos-autorais-home {
+  text-align: center;
+  font-size: 14px;
+  opacity: 0.6;
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 1px solid #374151;
+  /* CORREÇÃO: MANTENDO ESTILO ESCURO PARA A LINHA DIVISÓRIA */
+  color: #333;
+  /* Cor padrão para o copyright */
+}
+
+/* RESPONSIVIDADE DO FOOTER (Garante que as colunas se empilhem em telas menores) */
+@media (max-width: 600px) {
+  .coluna-rodape-home {
+    text-align: center;
+  }
+
+  .container-rodape-home {
+    grid-template-columns: 1fr;
+    /* Força uma coluna em telas muito pequenas */
+  }
+}
