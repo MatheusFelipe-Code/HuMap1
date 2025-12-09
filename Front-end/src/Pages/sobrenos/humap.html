@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HuMap - Sobre Nós</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="sobre.css" />
+</head>
+
+<body>
+
+    <aside id="menu" class="menu">
+        <div class="menu-content">
+            <a href="#">Feed</a>
+            <a href="#">Perfil</a>
+            <a href="#">Configurações</a>
+            <a href="#">Suporte</a>
+            <a href="#">Sobre Nós</a>
+            <a href="#">Tutorial</a>
+        </div>
+        <button id="btn-close" class="btn-close">Sair</button>
+    </aside>
+
+    <header class="navbar">
+
+        <div id="hamburger" class="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+
+        <h1 class="navbar-center">SOBRE NÓS</h1>
+
+        <div class="navbar-icons">
+            <div class="alerta-container">
+                 <img src="Notificacao.png" alt="Notificações" class="sino">
+                 <span class="contador-alerta">2</span>
+            </div>
+            
+            <div class="perfil-saudacao">
+                <p>Olá, Ítala!</p>
+                <img src="Perfil.png" alt="Perfil" class="perfil-pequeno">
+            </div>
+        </div>
+
+    </header>
+
+    <div class="card">
+        
+        <div class="link-voltar">
+            <img src="SetaVoltar.png" alt="Voltar" onclick="history.back()"> 
+        </div>
+
+        <div class="linha-duas-colunas">
+            <p>
+                O HuMap é uma rede social de impacto local criada para mapear, denunciar e acompanhar problemas em comunidades, bairros e cidades, promovendo uma nova forma de participação cidadã. A iniciativa nasceu de um grupo de jovens estudantes do Senac Pernambuco — Recife, movidos pelo desejo de transformar indignação em ação, por meio de uma ferramenta simples, transparente e colaborativa que fortalece a cidadania no dia a dia.
+            </p>
+        </div>
+
+        <div class="texto-full imagem-centralizada">
+             <img src="humap.jpg" alt="Imagem Ilustrativa">
+        </div>
+        
+        <div class="texto-full">
+            <div class="texto-container"> 
+                <p>Com um mapa interativo, filtros inteligentes e recursos típicos das redes sociais — como curtidas, comentários, compartilhamentos e seguidores — o HuMap permite que cidadãos tornem visíveis as dificuldades de suas regiões e cobrem soluções de forma coletiva. Dessa maneira, a plataforma transforma reclamações individuais em ações colaborativas, criando uma verdadeira inteligência territorial que revela, em tempo real, as principais carências urbanas — desde buracos nas ruas até falhas em iluminação pública, saneamento, segurança ou gestão de resíduos.</p>
+                
+                <p>Mais do que um canal de denúncia, o HuMap é um ecossistema digital de engajamento social. Ele conecta cidadãos, órgãos públicos, empresas e instituições parceiras em um mesmo ambiente, incentivando o diálogo e a busca conjunta por soluções. A plataforma permite respostas diretas de prefeituras e concessionárias, reconhece usuários engajados com selos de impacto local e gera relatórios automáticos e estatísticas regionais, atraindo o interesse de ONGs, veículos de mídia e pesquisadores.</p>
+                
+                <p>Nosso propósito é **claro**: amplificar vozes locais, gerar pressão pública inteligente e fortalecer a cidadania digital. Por meio da transparência, da gamificação e de uma rede de parcerias colaborativas, o HuMap promove participação contínua e contribui para melhorias reais nos territórios.</p>
+                
+                <p>O HuMap é onde a comunidade — impulsionada pela energia de jovens protagonistas — se une para transformar o lugar onde vive.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <button class="btn-voltar-fixo" onclick="history.back()">Voltar</button>
+
+    <script src="sobre.js"></script>
+
+</body>
+</html>
